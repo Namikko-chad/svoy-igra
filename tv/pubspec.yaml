@@ -1,0 +1,64 @@
+name: svoy_igra_tv
+description: Своя игра — экран. Read-only Android TV display client of the quiz game.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Networking
+  http: ^1.6.0
+  web_socket_channel: ^3.0.3
+
+  # Storage
+  shared_preferences: ^2.5.3
+
+  # Device / app info for the WS `hello`
+  device_info_plus: ^13.0.0
+  package_info_plus: ^10.0.0
+
+  # Display
+  wakelock_plus: ^1.7.0
+  qr_flutter: ^4.1.0
+  flutter_markdown_plus: ^1.0.5
+  markdown: ^7.3.0
+  video_player: ^2.10.0
+  audioplayers: ^6.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  stream_channel: ^2.1.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
+  fonts:
+    - family: Unbounded
+      fonts:
+        - asset: assets/fonts/Unbounded-600.ttf
+          weight: 600
+        - asset: assets/fonts/Unbounded-800.ttf
+          weight: 800
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-400.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-500.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-600.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-700.ttf
+          weight: 700
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-500.ttf
+          weight: 500

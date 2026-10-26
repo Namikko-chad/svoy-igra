@@ -1,0 +1,65 @@
+/* Design tokens — DESIGN_MANIFEST.md §1. Dark only. */
+:root {
+  color-scheme: dark;
+
+  --bg: #070b1f;
+  --bg-glow: radial-gradient(ellipse at 50% 35%, #1a2a7a 0%, #070b1f 70%);
+  --surface: #10173a;
+  --surface-2: #18214f;
+  --border: #26306a;
+  --cell: linear-gradient(180deg, #1638b5 0%, #0e2280 100%);
+  --cell-hover: #2148d6;
+  --cell-played: #0b1236;
+  --gold: #f7c948;
+  --text: #f1f3ff;
+  --text-muted: #98a2cf;
+  --accent: #38c6ff;
+  --success: #2bd47d;
+  --danger: #ff4d5e;
+  --warning: #ffb020;
+  --disabled: #4a5180;
+
+  --font-display: 'Unbounded', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-32: 32px;
+  --fs-48: 48px;
+  --fs-72: 72px;
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  --r-input: 8px;
+  --r-card: 12px;
+  --r-pill: 999px;
+
+  --glow-accent: 0 0 24px rgba(56, 198, 255, 0.25);
+  --glow-gold: 0 0 32px rgba(247, 201, 72, 0.35);
+
+  --t-hover: 150ms ease-out;
+  --t-phase: 300ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-hover: 0ms;
+    --t-phase: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

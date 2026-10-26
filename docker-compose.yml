@@ -1,0 +1,22 @@
+# The whole server in one container: API, WebSocket and the web client on :3050.
+# Packs, games and avatars live in the game-data volume. LAN discovery (UDP
+# broadcast) usually does not cross Docker's port mapping — phones and TVs can
+# still connect by typing the address.
+services:
+  app:
+    build: .
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment:
+      DATA_DIR: /data
+      STATIC_DIR: /app/web
+    volumes:
+      - game-data:/data
+    ports:
+      - "3050:3050"
+      - "3051:3051/udp"
+    restart: unless-stopped
+
+volumes:
+  game-data:
