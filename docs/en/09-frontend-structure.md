@@ -66,6 +66,9 @@ tests/                     splitter and client unit tests (Vitest)
 - Production: `pnpm build` → `dist/`, served by the backend (`STATIC_DIR`) from the same
   origin as the API — the root `Dockerfile` builds both into one image. A reverse proxy in
   front must pass `Host`/`X-Forwarded-Host` and WebSocket upgrades through.
+- `index.html` carries the page description, Open Graph tags and a schema.org
+  `WebApplication` block for search engines and link previews; `public/robots.txt` lets
+  crawlers index only the start page (`/g/` game pages and `/api/` are disallowed).
 
 ## Commands
 

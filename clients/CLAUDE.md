@@ -149,6 +149,10 @@ make build-linux | build-windows | build-macos  # each on its own OS
 make run DEVICE=linux                           # or windows / macos / an Android id
 ```
 
+CI: `.github/workflows/builds.yml` (repo root) builds Windows, macOS, Linux and the APK;
+keep its paths (`build/windows/x64/runner/Release`, `SvoyIgra.app`, Linux `bundle`) in
+sync with the runners and `Makefile`.
+
 ## Git Worktrees — FORBIDDEN
 
 - **Never use git worktrees.** Do not run `git worktree add` / `list` / `remove` / `prune`, do not create or work inside a separate worktree directory, and never suggest a worktree as a way to isolate work.

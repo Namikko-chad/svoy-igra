@@ -1,0 +1,10 @@
+name: Feature request / Предложение
+description: An idea for the game / Идея для игры
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What and why / Что и зачем
+    validations:
+      required: true

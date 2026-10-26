@@ -111,6 +111,8 @@ make -C clients run DEVICE=linux  # or windows / macos / an Android device id
 ```
 
 Each desktop build runs on its own OS: Flutter does not cross-compile desktop apps.
+GitHub Actions builds all of them, and both APKs, in one run (`.github/workflows/builds.yml`,
+see [Getting started](03-getting-started.md#builds-on-github-actions)).
 Requirements: Linux — `clang`, `cmake`, `ninja`, GTK 3 and GStreamer development
 packages (`fvp` downloads its libmdk at build time); Windows — Visual Studio 2022 with
 «Desktop development with C++»; macOS — Xcode. Ship the whole output folder (Linux,

@@ -143,6 +143,28 @@ On first start the app searches the network for servers (UDP broadcast) and offe
 the found ones; an address such as `http://192.168.1.10:3050` can be typed instead.
 The TV app then lists the live games; it is driven with the remote's D-pad.
 
+### Builds on GitHub Actions
+
+`.github/workflows/builds.yml` builds every app on GitHub's runners: the desktop app for
+Windows (`svoy-igra-<version>-windows-x64.zip`), macOS (`…-macos.zip`, universal) and
+Linux (`…-linux-x64.tar.gz`), plus the phone APK (`svoy-igra-<version>.apk`) and the TV
+APK (`svoy-igra-tv-<version>.apk`). `<version>` is the server version from
+`backend/app/config/config.go`; the build number is the run number.
+
+- Start it in **Actions → Builds → Run workflow**; the files are the run's artifacts.
+- Push a tag `vX.Y.Z` to also publish them as a GitHub release.
+- Repository settings (**Settings → Secrets and variables → Actions**):
+  - secret `ANDROID_DEBUG_KEYSTORE` — `base64 -w0 ~/.android/debug.keystore`. The APKs are
+    signed with this key, so installed apps update in place and `ANDROID_CERT_SHA256`
+    stays valid. Without it each run signs with a new random key (the run shows a warning);
+  - variable `APP_LINK_HOST` (optional) — the host of `https://<host>/g/<PIN>` links the
+    phone app opens.
+- The CI build number is higher than a local build's (`1`), so after installing a CI APK
+  a local build installs only after uninstalling the app.
+- Desktop builds are not signed by a developer certificate: Windows SmartScreen asks to
+  confirm («Подробнее» → «Выполнить в любом случае»); on macOS open the app with
+  right-click → «Открыть» the first time, or run `xattr -dr com.apple.quarantine SvoyIgra.app`.
+
 ### Share links opening the app
 
 - `svoyigra://join?server=…&pin=…` always opens the app (phone or computer; a desktop

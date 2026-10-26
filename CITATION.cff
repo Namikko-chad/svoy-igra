@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Своя игра (Svoya Igra): self-hosted Jeopardy-style quiz game"
+type: software
+authors:
+  - family-names: Schmidt
+    given-names: Leonhard
+repository-code: "https://github.com/Namikko-chad/svoy-igra"
+license: MIT
+version: 6.3.0
+date-released: 2026-10-26
+keywords:
+  - quiz
+  - jeopardy
+  - trivia
+  - buzzer
+  - party game
+  - своя игра
+  - викторина

@@ -12,7 +12,7 @@ import (
 )
 
 // Version is the server version reported by /api/info and LAN discovery.
-const Version = "6.2.0"
+const Version = "6.3.0"
 
 type Config struct {
 	Host          string

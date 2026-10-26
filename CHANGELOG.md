@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [6.3.0] - 2026-10-26
+
+### Added
+
+- **`LICENSE`** — the project is now MIT-licensed.
+- **`README.md` rewritten for search** (what the game is, features, Docker quick start, downloads from Releases, FAQ, badges) and a Russian **`README.ru.md`**, linked to each other.
+- **`llms.txt`** at the repository root: a short description and links to the key docs for AI assistants and crawlers.
+- `CITATION.cff`, `CONTRIBUTING.md`, `SECURITY.md` and issue templates (`.github/ISSUE_TEMPLATE/`: bug report, feature request), so GitHub shows a complete community profile.
+- The web client's `index.html` has a page description, Open Graph tags and a schema.org `WebApplication` block, so search results and shared links show a proper title and text; `frontend/public/robots.txt` allows indexing only the start page, not game pages (`/g/`) or `/api/`. Described in `docs/{en,ru}/09-frontend-structure.md`.
+
 ## [6.2.0] - 2026-10-26
 
 ### Added
@@ -17,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Window «Своя игра», 1280 × 800 at start, at least 400 × 560; app icon from the web favicon.
   - `hello.platform` can now be `windows`, `linux` or `macos`, so the admin's player card shows the computer's OS, model and display size (`docs/{en,ru}/05-protocol.md` §4.1).
 - Root `make linux` builds the Linux desktop app.
+- **Builds on GitHub Actions** (`.github/workflows/builds.yml`), started by hand or by a `vX.Y.Z` tag (which also publishes a GitHub release): Windows `.zip`, macOS universal `.zip`, Linux `.tar.gz`, the phone APK and the TV APK, versioned with the server version. APKs are signed with the key from the `ANDROID_DEBUG_KEYSTORE` secret so installed apps update in place; the optional `APP_LINK_HOST` variable enables App Links in the phone APK. Described in `docs/{en,ru}/03-getting-started.md`.
 
 ### Changed
 

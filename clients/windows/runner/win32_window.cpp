@@ -209,7 +209,8 @@ Win32Window::MessageHandler(HWND hwnd,
 
     case WM_GETMINMAXINFO: {
       // Smallest usable window: 400 x 560 logical pixels.
-      double scale = GetDpiForWindow(hwnd) / 96.0;
+      HMONITOR monitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+      double scale = FlutterDesktopGetDpiForMonitor(monitor) / 96.0;
       auto info = reinterpret_cast<MINMAXINFO*>(lparam);
       info->ptMinTrackSize.x = Scale(400, scale);
       info->ptMinTrackSize.y = Scale(560, scale);

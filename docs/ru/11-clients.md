@@ -111,6 +111,8 @@ make -C clients run DEVICE=linux  # или windows / macos / id Android-устр
 ```
 
 Каждая десктопная сборка делается на своей ОС: Flutter не собирает десктоп под другую систему.
+GitHub Actions собирает их все и оба APK за один запуск (`.github/workflows/builds.yml`,
+см. [Начало работы](03-getting-started.md#сборки-на-github-actions)).
 Что нужно: Linux — `clang`, `cmake`, `ninja`, dev-пакеты GTK 3 и GStreamer (`fvp` скачивает libmdk
 при сборке); Windows — Visual Studio 2022 с «Desktop development with C++»; macOS — Xcode.
 Распространяйте папку сборки целиком (Linux, Windows) или `.app` (macOS); десктопные сборки не подписаны.
